@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanlam Retirement Quote</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #0072ce;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #0072ce;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
 
+<div class="container">
+  <h2>Get Your Retirement Quote</h2>
+
+  <input type="text" id="name" placeholder="Name" required>
+  <input type="text" id="surname" placeholder="Surname" required>
+  <input type="tel" id="phone" placeholder="Contact Number" required>
+  <input type="email" id="email" placeholder="Email" required>
+
+  <button onclick="sendMessage()">Get Quote</button>
+</div>
+
+<script>
+function sendMessage() {
+  let name = document.getElementById("name").value;
+  let surname = document.getElementById("surname").value;
+  let phone = document.getElementById("phone").value;
+  let email = document.getElementById("email").value;
+
+  if (!name || !surname || !phone || !email) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  let message = `I'm interested in the Sanlam retirement savings.%0A
+Name: ${name}%0A
+Surname: ${surname}%0A
+Contact: ${phone}%0A
+Email: ${email}`;
+
+  let url = `https://wa.me/27832142201?text=${message}`;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
